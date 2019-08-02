@@ -3,16 +3,16 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import CouponScreen from '../screens/coupon/coupon';
+import RecipeScreen from '../screens/recipe/recipe';
+import ProfileScreen from '../screens/profile/profile';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+const CouponStack = createStackNavigator({
+  Home: CouponScreen,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+CouponStack.navigationOptions = {
+  tabBarLabel: 'Coupon',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -25,12 +25,12 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const RecipeStack = createStackNavigator({
+  Links: RecipeScreen,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+RecipeStack.navigationOptions = {
+  tabBarLabel: 'Recipe',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -39,12 +39,12 @@ LinksStack.navigationOptions = {
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const ProfileStack = createStackNavigator({
+  Settings: ProfileScreen,
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+ProfileStack.navigationOptions = {
+  tabBarLabel: 'Profile',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -54,7 +54,7 @@ SettingsStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+  ProfileStack,
+  CouponStack,
+  RecipeStack
 });
