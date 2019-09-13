@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import CouponScreen from '../screens/coupon/coupon';
+import CouponScreen from '../screens/mycoupons/coupon';
 import RecipeScreen from '../screens/recipe/recipe';
 import ProfileScreen from '../screens/profile/profile';
 
