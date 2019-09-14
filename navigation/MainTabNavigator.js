@@ -6,13 +6,15 @@ import TabBarIcon from '../components/TabBarIcon';
 import CouponScreen from '../screens/mycoupons/coupon';
 import RecipeScreen from '../screens/recipe/recipe';
 import ProfileScreen from '../screens/profile/profile';
+import ConfigurationScreen from '../screens/profile/profile';
+
 
 const CouponStack = createStackNavigator({
   Home: CouponScreen,
 });
 
 CouponStack.navigationOptions = {
-  tabBarLabel: 'Coupon',
+  tabBarLabel: 'Cupones',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -25,12 +27,13 @@ CouponStack.navigationOptions = {
   ),
 };
 
+
 const RecipeStack = createStackNavigator({
   Links: RecipeScreen,
 });
 
 RecipeStack.navigationOptions = {
-  tabBarLabel: 'Recipe',
+  tabBarLabel: 'Receta',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -44,7 +47,21 @@ const ProfileStack = createStackNavigator({
 });
 
 ProfileStack.navigationOptions = {
-  tabBarLabel: 'Profile',
+  tabBarLabel: 'Perfil',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    />
+  ),
+};
+
+const ConfigurationStack = createStackNavigator({
+  Settings: ConfigurationScreen,
+});
+
+ConfigurationStack.navigationOptions = {
+  tabBarLabel: 'Configuracion',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -56,5 +73,6 @@ ProfileStack.navigationOptions = {
 export default createBottomTabNavigator({
   ProfileStack,
   CouponStack,
-  RecipeStack
+  RecipeStack,
+  ConfigurationStack
 });
